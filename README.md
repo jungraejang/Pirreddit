@@ -150,3 +150,22 @@ CHAT:
   - Post Like
 - Subscription
   - Subscription to Subreddit
+
+#TIMELINE:
+Week1: Planning Phase
+ - Plan out the database, routes, components and implementation Plan
+
+Week2: Backend Functionality
+  - Design a database used for the project
+  - Designate appropriate routes for API queries
+  - Debug database
+  - Test out functionality
+
+Week 3: Frontend Development
+  - Design frontend functionality
+  - Implement one component per day
+  - CSS and Styling (Weekend of 3rd week)
+
+Week 4: Debugging Phase
+  - Debug code to maximize app functionality
+  - Implement any components or functionalities deemed necessary
