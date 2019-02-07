@@ -9,13 +9,13 @@ As a personal project, I want to make clone version of Reddit with similar funct
 Reddit clone will be built on React/Redux for front-end, and back-end will be built using SQL and Express.
 
 # Website Snapshots
-https://lh3.googleusercontent.com/wAO3JS77-qI3nfSXVrXCQ9SXw0swrz7ldN3NLHyX7VSqh3yXygZz70r0-yXxieJRTXjuObo7wMtBlh4BBvhul5FcOI5-xTnrV08BLbuH2n8ibFo5EdU2VvoziwsIQOqM3Gx3y5gQ=w2400
+![pic](https://lh3.googleusercontent.com/wAO3JS77-qI3nfSXVrXCQ9SXw0swrz7ldN3NLHyX7VSqh3yXygZz70r0-yXxieJRTXjuObo7wMtBlh4BBvhul5FcOI5-xTnrV08BLbuH2n8ibFo5EdU2VvoziwsIQOqM3Gx3y5gQ=w2400)
 
-https://lh3.googleusercontent.com/4VJ8ne9nXC7XVccASIfnHuqcRLkRklfZ2ZanVmuSxN63FxIuhBy2pveB-i5rpKIUeMIGy4q3thZIFwRzsFAZLhBNqq4ejfiI_5L4O0iCCYD8ISym3JSsyCQ7BDs7YPMMlJ-6MhCC=w2400
+![pic](https://lh3.googleusercontent.com/4VJ8ne9nXC7XVccASIfnHuqcRLkRklfZ2ZanVmuSxN63FxIuhBy2pveB-i5rpKIUeMIGy4q3thZIFwRzsFAZLhBNqq4ejfiI_5L4O0iCCYD8ISym3JSsyCQ7BDs7YPMMlJ-6MhCC=w2400)
 
-https://lh3.googleusercontent.com/cnr4AFjqgZ46kf72OHmXO0EASMqnHrG-MTrrO63VZRSHOGbS3PF9nnT03R33gkIf4O8LC9B8Ft7ZR4wSL1mPM35yhU26UtUc1UywHjsJeaOxigk42Jog8fOCZpPnYITU9ub486jv=w2400
+![pic](https://lh3.googleusercontent.com/cnr4AFjqgZ46kf72OHmXO0EASMqnHrG-MTrrO63VZRSHOGbS3PF9nnT03R33gkIf4O8LC9B8Ft7ZR4wSL1mPM35yhU26UtUc1UywHjsJeaOxigk42Jog8fOCZpPnYITU9ub486jv=w2400)
 
-https://lh3.googleusercontent.com/XCJNawaC9TcnVrYvuLQCa_ZyQuWOmpxnK9MLCCghZM3hSlWizjGBp-hCu5TpGOwp2gQV1Z38shiNVVv2G41QKEKq5yJiLQgB4Kn8d9ydcVm_EWLrVY0vl17YfEb20Q1GpibVmnst=w2400
+![pic](https://lh3.googleusercontent.com/XCJNawaC9TcnVrYvuLQCa_ZyQuWOmpxnK9MLCCghZM3hSlWizjGBp-hCu5TpGOwp2gQV1Z38shiNVVv2G41QKEKq5yJiLQgB4Kn8d9ydcVm_EWLrVY0vl17YfEb20Q1GpibVmnst=w2400)
 
 # Database Schema:
 POST:
