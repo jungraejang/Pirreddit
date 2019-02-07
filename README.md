@@ -24,15 +24,18 @@ POST:
 - time_stamp
 - subreddit_id SUBREDDIT(id)
 - body  
+
 USER:
 - id
 - username
 - age
 - email
 - password
+
 SUBREDDIT:
 - id
 - subreddit_name
+
 CHAT:
 - id
 - community_id SUBREDDIT(id)
@@ -40,6 +43,7 @@ CHAT:
 - sender_id USER(id)
 - message_id
 - time_stamp
+
 MESSAGE:
 - id
 - thread_id
@@ -47,6 +51,7 @@ MESSAGE:
 - sender_id USER(id)
 - body
 - time_stamp
+
 LIKE:
 - id
 - liker_id USER(id)
@@ -54,11 +59,13 @@ LIKE:
 - post_id POST(id)
 - comment_id COMMENT(id)
 - time_stamp
+
 COMMENT:
 - id
 - body
 - commenter_id USER(id)
 - post_id POST(id)
+
 SUBSCRIPTION:
 - user_id USER(id)
 - subreddit_id SUBREDDIT(id)
