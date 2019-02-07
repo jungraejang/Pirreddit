@@ -151,7 +151,7 @@ CHAT:
 - Subscription
   - Subscription to Subreddit
 
-#TIMELINE:
+# TIMELINE:
 Week1: Planning Phase
  - Plan out the database, routes, components and implementation Plan
 
