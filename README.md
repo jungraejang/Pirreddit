@@ -47,7 +47,7 @@ CHAT:
 MESSAGE:
 - id
 - thread_id
-- receipient_id USER(id)
+- recipient_id USER(id)
 - sender_id USER(id)
 - body
 - time_stamp
