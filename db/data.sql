@@ -8,7 +8,7 @@ CREATE TABLE users (
   username VARCHAR UNIQUE NOT NULL,
   age INT NOT NULL,
   email VARCHAR UNIQUE NOT NULL,
-  password VARCHAR NOT NULL,
+  password_digest VARCHAR NOT NULL,
   profile_url TEXT
 );
 
@@ -70,36 +70,36 @@ CREATE TABLE likes (
 
 BEGIN;
 
-insert into users (username, age, email, password, profile_url) values ('eweatherell0', 57, 'mthirlaway0@msu.edu', 'zavIgc9iQA', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('alassey1', 84, 'icrowcroft1@deliciousdays.com', 'qsJRlKzx', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('lmoncur2', 10, 'fpedro2@state.gov', 'BZFEw5Lyv', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('hdukesbury3', 8, 'sshepeard3@ustream.tv', 'OX5lrniAPutN', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('bdella4', 51, 'swellbeloved4@berkeley.edu', 'S6vsBzpBR', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('dcastagneri5', 54, 'jwixey5@china.com.cn', 'ErcwRkR', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('imcbrearty6', 30, 'gdobrowlski6@toplist.cz', 'niKBmzJKnBN', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('wham7', 64, 'mfegan7@dailymotion.com', 'AEXa51', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('dheselwood8', 59, 'alankham8@sphinn.com', '72QVnoRfUm', 'http://dummyimage.com/250x250.jpg/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('bberthon9', 52, 'jrevie9@nature.com', 'R2omvIujVas', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('jdoya', 35, 'mbilbya@sogou.com', '3vhOcSPgr', 'http://dummyimage.com/250x250.png/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('ahiscoeb', 95, 'rtretterb@cmu.edu', 'PlmrgKIb2yj', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('eoronanc', 89, 'ahealeyc@sitemeter.com', '9BVJ4UxHv', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('jmccloyd', 35, 'cduffetd@amazon.co.jp', 'IDc9P3C', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('rastlatte', 14, 'amcguffoge@mapy.cz', 'gDCg8OwUWr3', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('esanbrookf', 3, 'gwyclifff@eventbrite.com', 'WVPMtPhO8', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('bdunwoodyg', 69, 'ebrillg@alexa.com', 'DHwgjwQaUym', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
-insert into users (username, age, email, password, profile_url) values ('wberzonsh', 11, 'rsorrellh@dailymail.co.uk', 'pCNi5FfV8ZXq', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('mchristenei', 15, 'afeatherstoni@youtube.com', '6z5wUeouWuu', 'http://dummyimage.com/250x250.jpg/cc0000/ffffff');
-insert into users (username, age, email, password, profile_url) values ('lfannerj', 83, 'klarawayj@google.ca', 'JgrmZt', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('dgrimditchk', 82, 'bmcclaughlink@house.gov', '9MNeOhWLDBJ', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('iyashnovl', 41, 'dcasesl@gizmodo.com', 'tgs7EaNitA', 'http://dummyimage.com/250x250.png/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('gshovelbottomm', 39, 'wchartresm@washingtonpost.com', 'u467H1', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('tgrinvaldsn', 44, 'jandrissn@google.com.hk', 'HdwfPf1wsz', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
-insert into users (username, age, email, password, profile_url) values ('sbesemero', 58, 'ekembleyo@nih.gov', 'gHqeCyrqskG', 'http://dummyimage.com/250x250.png/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('rwashtellp', 39, 'tblaineyp@odnoklassniki.ru', 'QIL3hpi3V', 'http://dummyimage.com/250x250.png/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('mbarnsdaleq', 44, 'rlympenieq@state.tx.us', 'HGdV0M', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
-insert into users (username, age, email, password, profile_url) values ('mhovyr', 82, 'tblunsdenr@narod.ru', 'q1wmO5u', 'http://dummyimage.com/250x250.png/dddddd/000000');
-insert into users (username, age, email, password, profile_url) values ('trulers', 59, 'bdibatistas@ibm.com', 'ivyzFcC5', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
-insert into users (username, age, email, password, profile_url) values ('anovillt', 85, 'tpoachert@soundcloud.com', 'RsIn0752PQQ', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('eweatherell0', 57, 'mthirlaway0@msu.edu', 'zavIgc9iQA', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('alassey1', 84, 'icrowcroft1@deliciousdays.com', 'qsJRlKzx', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('lmoncur2', 10, 'fpedro2@state.gov', 'BZFEw5Lyv', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('hdukesbury3', 8, 'sshepeard3@ustream.tv', 'OX5lrniAPutN', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('bdella4', 51, 'swellbeloved4@berkeley.edu', 'S6vsBzpBR', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('dcastagneri5', 54, 'jwixey5@china.com.cn', 'ErcwRkR', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('imcbrearty6', 30, 'gdobrowlski6@toplist.cz', 'niKBmzJKnBN', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('wham7', 64, 'mfegan7@dailymotion.com', 'AEXa51', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('dheselwood8', 59, 'alankham8@sphinn.com', '72QVnoRfUm', 'http://dummyimage.com/250x250.jpg/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('bberthon9', 52, 'jrevie9@nature.com', 'R2omvIujVas', 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('jdoya', 35, 'mbilbya@sogou.com', '3vhOcSPgr', 'http://dummyimage.com/250x250.png/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('ahiscoeb', 95, 'rtretterb@cmu.edu', 'PlmrgKIb2yj', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('eoronanc', 89, 'ahealeyc@sitemeter.com', '9BVJ4UxHv', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('jmccloyd', 35, 'cduffetd@amazon.co.jp', 'IDc9P3C', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('rastlatte', 14, 'amcguffoge@mapy.cz', 'gDCg8OwUWr3', 'http://dummyimage.com/250x250.bmp/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('esanbrookf', 3, 'gwyclifff@eventbrite.com', 'WVPMtPhO8', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('bdunwoodyg', 69, 'ebrillg@alexa.com', 'DHwgjwQaUym', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('wberzonsh', 11, 'rsorrellh@dailymail.co.uk', 'pCNi5FfV8ZXq', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('mchristenei', 15, 'afeatherstoni@youtube.com', '6z5wUeouWuu', 'http://dummyimage.com/250x250.jpg/cc0000/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('lfannerj', 83, 'klarawayj@google.ca', 'JgrmZt', 'http://dummyimage.com/250x250.png/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('dgrimditchk', 82, 'bmcclaughlink@house.gov', '9MNeOhWLDBJ', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('iyashnovl', 41, 'dcasesl@gizmodo.com', 'tgs7EaNitA', 'http://dummyimage.com/250x250.png/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('gshovelbottomm', 39, 'wchartresm@washingtonpost.com', 'u467H1', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('tgrinvaldsn', 44, 'jandrissn@google.com.hk', 'HdwfPf1wsz', 'http://dummyimage.com/250x250.png/5fa2dd/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('sbesemero', 58, 'ekembleyo@nih.gov', 'gHqeCyrqskG', 'http://dummyimage.com/250x250.png/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('rwashtellp', 39, 'tblaineyp@odnoklassniki.ru', 'QIL3hpi3V', 'http://dummyimage.com/250x250.png/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('mbarnsdaleq', 44, 'rlympenieq@state.tx.us', 'HGdV0M', 'http://dummyimage.com/250x250.jpg/ff4444/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('mhovyr', 82, 'tblunsdenr@narod.ru', 'q1wmO5u', 'http://dummyimage.com/250x250.png/dddddd/000000');
+insert into users (username, age, email, password_digest, profile_url) values ('trulers', 59, 'bdibatistas@ibm.com', 'ivyzFcC5', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
+insert into users (username, age, email, password_digest, profile_url) values ('anovillt', 85, 'tpoachert@soundcloud.com', 'RsIn0752PQQ', 'http://dummyimage.com/250x250.png/cc0000/ffffff');
 
 insert into subreddits (subreddit_name) values ('Assimilated');
 insert into subreddits (subreddit_name) values ('dynamic');

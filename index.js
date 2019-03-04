@@ -1,19 +1,29 @@
 const express = require("express");
 const app = express();
-const users = require("./routes/users.js")
-const posts = require("./routes/posts.js")
+const users = require("./routes/users.js");
+const posts = require("./routes/posts.js");
+const session = require("express-session");
+const passport = require("./auth/local");
 
-let cors = require("cors")
-app.use(cors());
+const bodyParser = require("body-parser");
 
-const bodyParser = require("body-parser")
-
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(
+  session({
+    secret: "never gonna give u up",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/users", users);
 app.use("/posts", posts);
 
 app.listen(8080, () => {
-  console.log("Listening to port 8080")
-})
+  console.log("Listening to port 8080");
+});

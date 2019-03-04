@@ -60,7 +60,7 @@ img {
 
 .all_post_display {
   display: flex;
-  width: 70%;
+  width: 76%;
   flex-direction: column;
 }
 
@@ -69,7 +69,7 @@ img {
   height: 600px;
   display: flex;
   justify-content: space-around;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .side_ad {
@@ -123,7 +123,7 @@ img {
   margin-right: 25px;
   padding-left: 20px;
   border: 1px solid lightgrey;
-  height: 80px;
+  height: 100px;
 }
 
 .post p, h4 {
@@ -194,8 +194,8 @@ img {
 }
 
 .all_posts_logo_blue_nav {
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   padding: 5px;
   margin: 10px;
 }
@@ -224,4 +224,83 @@ img {
   border-radius: 4px;
   background-color: #307acc;
   color: white;
+}
+
+.signup_button:hover {
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #307acc;
+  color: white;
+  opacity: .8;
+}
+
+.authform_div {
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+background:rgba(28,53,94,0.3);
+align-self: center;
+}
+
+.authform {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 80%;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 10px, 10px;
+}
+
+.authform_contents {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+}
+
+.signin_x_mark {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+.signin_side_img {
+  width: auto;
+  height: 100%;
+  margin-right: 50px;
+}
+
+.signin_logo_img {
+  width: 150px;
+  height: auto;
+}
+
+.upvote_arrow {
+  width: 15px;
+  height: auto;
+}
+
+.downvote_arrow {
+  width: 15px;
+  height: auto;
+}
+
+.likes_count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.likes_count p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

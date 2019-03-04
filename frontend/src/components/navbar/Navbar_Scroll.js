@@ -47,8 +47,8 @@ class Navbar_Scroll extends React.Component {
   }
 
   render() {
-    console.log("Navbar Props", this.props)
-    console.log("Menu Selection", this.state.menuSelection)
+    // console.log("Navbar Props", this.props)
+    // console.log("Menu Selection", this.state.menuSelection)
     return (
       <div className="scrolldown_menu">
         <div className="scrolldown_menu_button">

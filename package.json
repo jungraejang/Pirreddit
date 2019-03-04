@@ -4,7 +4,8 @@
   "description": "# Introduction: Reddit is a popular social news aggregation and discussion website where users can share latest news, memes, and information in forms of posts, messages, and subreddit discussions. Reddit's success can be attributed to its large user base, ease of use, and amount of contents posted by users covering various topics, if not unconventional time to time.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,13 @@
   "homepage": "https://github.com/jungraejang/unit5_personal_project#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg-promise": "^8.5.5",
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1"
