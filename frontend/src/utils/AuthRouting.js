@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import Auth from "./Auth";
+import SigninAuthForm from "./../components/login/SigninAuthForm.js"
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -9,12 +10,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       Auth.isUserAuthenticated() ? (
         <Component {...props} {...rest} />
       ) : (
-        <Redirect
-          to={{
-            pathname: "/auth/login",
-            state: { from: props.location }
-          }}
-        />
+        <Switch>
+          <Redirect to='/'/>
+          <Route path='/' component={SigninAuthForm}/>
+        </Switch>
       )
     }
   />

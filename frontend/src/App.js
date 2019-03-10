@@ -1,18 +1,20 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-import Navbar from "./components/navbar/Navbar.js";
-import { Route } from "react-router-dom";
+// import Navbar from "./components/navbar/Navbar.js";
+import { Route, Switch } from "react-router-dom";
 import PostDisplayContainer from "./components/posts/PostDisplayContainer";
 import NavbarContainer from "./components/navbar/NavbarContainer";
 import PopularPostDisplayContainer from "./components/posts/PopularPostDisplayContainer";
 import AdDisplay from "./components/ad_space/AdDisplay.js";
+import FrontPage from "./components/side_items/FrontPage.js";
 // import AuthForm from "./login/AuthForm";
 import Auth from "./utils/Auth";
 import PrivateRoute from "./utils/AuthRouting";
 import AuthForm from "./components/login/AuthForm.js";
-import SigninAuthForm from "./components/login/SigninAuthForm.js"
+import SigninAuthForm from "./components/login/SigninAuthForm.js";
+// import SinglePostDisplay from "./components/posts/SinglePostDisplay.js"
+import SinglePostContainer from "./components/posts/SinglePostContainer.js";
 
 class App extends Component {
   state = {
@@ -27,7 +29,6 @@ class App extends Component {
   }
 
   toggleSignup = () => {
-    debugger;
     this.setState({
       signupToggle: !this.state.signupToggle,
       loginToggle: false
@@ -35,35 +36,30 @@ class App extends Component {
   };
 
   toggleLogin = () => {
-    debugger;
     this.setState({
       signupToggle: false,
       loginToggle: !this.state.loginToggle
-    })
-  }
+    });
+  };
 
   checkAuthenticateStatus = () => {
-    const config = {
-      method: "get",
-      withCredentials: true
-    }
-    debugger;
-    axios.get("/users/isLoggedIn")
-    .then(user => {
+    // const config = {
+    //   method: "get",
+    //   withCredentials: true
+    // }
+
+    axios.get("/users/isLoggedIn").then(user => {
       console.log("username:", user);
-      debugger;
+
       if (user.data.username === Auth.getToken()) {
-        debugger
         this.setState({
           isLoggedIn: Auth.isUserAuthenticated(),
           username: Auth.getToken()
         });
       } else {
-        debugger;
         if (user.data.username) {
           this.logoutUser();
         } else {
-          debugger;
           Auth.deauthenticateUser();
         }
       }
@@ -71,7 +67,6 @@ class App extends Component {
   };
 
   logoutUser = () => {
-    debugger;
     axios
       .post("/users/logout")
       .then(() => {
@@ -82,11 +77,59 @@ class App extends Component {
       });
   };
 
+  displaySideItems = () => {
+    if (
+      (window.location.pathname === "/" ||
+        window.location.pathname === "/r/all" ||
+        window.location.pathname === "/r/popular") &&
+      this.state.isLoggedIn === true
+    ) {
+      return (
+        <>
+          <FrontPage />
+          <AdDisplay />
+        </>
+      );
+    } else if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/r/all" ||
+      window.location.pathname === "/r/popular"
+    ) {
+      return (
+        <>
+          <AdDisplay />
+        </>
+      );
+    } else {
+      return null;
+    }
+  };
+
+  switchClass = () => {
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/r/all" ||
+      window.location.pathname === "/r/popular"
+    ) {
+      return "all_post_display";
+    } else {
+      return "all_post_display_ext";
+    }
+  };
+
   render() {
-    console.log("is user authenticated?", Auth.isUserAuthenticated())
+    console.log("is user authenticated?", Auth.isUserAuthenticated());
+    console.log("Window Location: ", window.location.pathname);
+    console.log("username: ", this.state.username);
     return (
       <div className="App">
-        <NavbarContainer toggleSignup={this.toggleSignup} toggleLogin={this.toggleLogin} />
+        <NavbarContainer
+          toggleSignup={this.toggleSignup}
+          toggleLogin={this.toggleLogin}
+          isLoggedIn={this.state.isLoggedIn}
+          username={this.state.username}
+          logoutUser={this.logoutUser}
+        />
         {this.state.signupToggle ? (
           <AuthForm
             checkAuthenticateStatus={this.checkAuthenticateStatus}
@@ -97,14 +140,14 @@ class App extends Component {
         ) : null}
         {this.state.loginToggle ? (
           <SigninAuthForm
-          checkAuthenticateStatus={this.checkAuthenticateStatus}
-          isLoggedIn={this.state.isLoggedIn}
-          toggleSignup={this.toggleSignup}
-          toggleLogin={this.toggleLogin}
+            checkAuthenticateStatus={this.checkAuthenticateStatus}
+            isLoggedIn={this.state.isLoggedIn}
+            toggleSignup={this.toggleSignup}
+            toggleLogin={this.toggleLogin}
           />
         ) : null}
         <div className="all_contents_div">
-          <div className="all_post_display">
+          <div className={this.switchClass()}>
             <Route exact path="/" component={PostDisplayContainer} />
             <Route exact path="/r/all" component={PostDisplayContainer} />
             <Route
@@ -112,8 +155,18 @@ class App extends Component {
               path="/r/popular"
               component={PopularPostDisplayContainer}
             />
+            <Route
+              path="/r/:subreddit/comments/:id/:post_title"
+              render={props => (
+                <SinglePostContainer
+                  {...props}
+                  isLoggedIn={this.state.isLoggedIn}
+                  username={this.state.username}
+                />
+              )}
+            />
           </div>
-          <AdDisplay />
+          <div className="side_items_div">{this.displaySideItems()}</div>
         </div>
       </div>
     );

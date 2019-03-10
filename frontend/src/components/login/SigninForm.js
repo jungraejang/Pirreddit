@@ -12,10 +12,10 @@ const SigninForm = ({
   registerUser,
   handleChange
 }) => {
-  const path = match.path;
+  // const path = match.path;
   return (
     <React.Fragment>
-    <img src={reddit_logo} className="signin_logo_img" />
+    <img src={reddit_logo} className="signin_logo_img" alt="" />
     <h2>Sign In</h2>
       <form onSubmit={loginUser}>
         <input

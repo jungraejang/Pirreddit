@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { withRouter } from "react-router";
-import { Route, Switch } from "react-router-dom";
+// import { withRouter } from "react-router";
+// import { Route, Switch } from "react-router-dom";
 import Auth from "../../utils/Auth";
-import Form from "./Form"
+// import Form from "./Form"
 import SigninForm from "./SigninForm"
 import signin_side_img from "../../img/signin_side_img.png"
 import signin_x_mark from "../../img/x-mark-thin-240.png"
@@ -31,14 +31,12 @@ class SigninAuthForm extends React.Component {
   };
 
   loginUser = event => {
-    debugger
     event.preventDefault();
     const { username, password } = this.state;
-    debugger
     axios
       .post("/users/login", { username, password })
       .then(() => {
-        debugger
+  
         Auth.authenticateUser(username);
       })
       .then(() => {
@@ -54,11 +52,11 @@ class SigninAuthForm extends React.Component {
 
   loginForm = () => {
     const { username, password } = this.state;
-    const { isLoggedIn, signupToggle, loginToggle } = this.props;
+    const { isLoggedIn } = this.props;
     return (
     <div className="authform_div">
     <div className="authform">
-    <img src={signin_side_img} className="signin_side_img" />
+    <img src={signin_side_img} className="signin_side_img" alt="" />
     <div className="authform_contents">
     <SigninForm
       username={username}
@@ -69,14 +67,14 @@ class SigninAuthForm extends React.Component {
     />
     {this.state.registrationFailed ? <p>Registration Failed</p> : null}
     </div>
-    <img src={signin_x_mark} className="signin_x_mark" onClick={this.props.toggleLogin} />
+    <img src={signin_x_mark} className="signin_x_mark" alt="" onClick={this.props.toggleLogin} />
     </div>
     </div>
   )
   }
 
   render() {
-    const { isLoggedIn, signupToggle } = this.props;
+    const { signupToggle } = this.props;
     console.log("login toggle: ", signupToggle)
     console.log("auth props", this.props)
     return (

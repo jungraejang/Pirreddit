@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import popularPosts from "../../img/popular_posts_blue.png";
 import allPosts from "../../img/all_posts_blue.png"
+import home from "../../img/home.png"
 
 
 class Navbar_Scroll extends React.Component {
@@ -21,7 +22,8 @@ class Navbar_Scroll extends React.Component {
       <input />
       <p>REDDIT FEEDS</p>
       <div>
-        <Link to="/" name="Home" onClick={this.selectScrollMenuChoice}>Home</Link>
+        <Link to="/" name="Home" onClick={this.selectScrollMenuChoice}>
+        <img src={home} alt="" className="home_logo_scrollmenu" />Home</Link>
         <br />
         <Link to="/r/popular" name="Popular" onClick={this.selectScrollMenuChoice}>
         <img src={popularPosts} alt="" className="popular_logo_scrollmenu" />Popular</Link>

@@ -1,6 +1,6 @@
 import {connect} from "react-redux"
 import Navbar from "./Navbar.js"
-import Navbar_Scroll from "./Navbar_Scroll.js"
+// import Navbar_Scroll from "./Navbar_Scroll.js"
 
 const mapStateToProps = (state, ownProps) => {
 return null

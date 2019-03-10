@@ -12,7 +12,7 @@ const Form = ({
   registerUser,
   handleChange
 }) => {
-  const path = match.path;
+  // const path = match.path;
   return (
     <React.Fragment>
       <form onSubmit={registerUser}>
